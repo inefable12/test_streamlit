@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 st.header(':green[Puquna]: Talleres STEAM :pill:' , divider='blue')
 
@@ -32,11 +32,11 @@ st.write (pd.DataFrame({
 
 y = np.random.normal(0,1, size = 100)
 
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 
-ax.hist(y, bins = 15)
+#ax.hist(y, bins = 15)
 
-st.write(fig)
+#st.write(fig)
 
 ###
 code = '''
