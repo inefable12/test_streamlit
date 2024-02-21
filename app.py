@@ -34,12 +34,10 @@ def page2():
     
     total1, total2 = st.columns(2, gap='large')
     with total1:
-        st.info('Talleres presenciales',icon=":stars:")
-        st.write('''Capacítate en skills que potencian tu CV.
-        Implementa herramientas computacionales, simulaciones, 
-        inteligencia artificial, prototipado con impresión 3D, y mucho más.''')
+        st.info('Talleres presenciales') #,icon=":stars:")
+        st.write('''Capacítate en skills que potencian tu CV. Implementa herramientas computacionales, simulaciones, inteligencia artificial, prototipado con impresión 3D, y mucho más.''')
     with total2:
-        st.info('Talleres virtuales',icon=":stars:")
+        st.info('Talleres virtuales') #,icon=":stars:")
         st.write (pd.DataFrame({'Names': ['Exploración in silico',
                                           'Revisión de papers con ia', 
                                           'Simulaciones moleculares 2'], 
