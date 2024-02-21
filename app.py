@@ -13,8 +13,8 @@ st.sidebar.image("Captura de pantalla de 2024-02-13 17-38-24.png",
 ##############Pagina 1##############
 
 def Home():
-    st.markdown("# HOME :books:")
-    st.sidebar.markdown("# HOME :books:")
+    st.markdown("# Home :books:")
+    st.sidebar.markdown("# Home :books:")
     image = Image.open("Captura de pantalla de 2024-02-13 17-38-24.png")
     st.image(image, caption='Est')
     
@@ -137,4 +137,11 @@ st.write('color is:   ', color)
 
 #st.write(fig)
 
+page_names_to_funcs = {
+  "Home": Home,
+  "Cursos": page2,
+  "Productos STEAM": page3
+}
 
+selected_page = st.sidebar.selectbox("Selecciona una página", page_names_to_funcs.keys())
+page_names_to_funcs[selected_page]()
