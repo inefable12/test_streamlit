@@ -1,44 +1,59 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from PIL import Image
 #import matplotlib.pyplot as plt
 
-st.header(':green[Puquna]: Talleres STEAM :pill:' , divider='blue')
+##############
+st.sidebar.image("Captura de pantalla de 2024-02-13 17-38-24.png",
+                 caption="Bienvenidx")
 
-st.subheader('Jesus Alvarado Huayhuaz')
 
-st.title('Cursos de especialización 2024 :books:' )
 
-st.caption('Por favor _subscríbete_ a mi :red[canal]')
+##############Pagina 1##############
 
-st.write(
-    '''
-    Capacítate en skills que potencian tu CV. 
-    Implementa herramientas computacionales, 
-    simulaciones, inteligencia artificial,
-    prototipado con impresión 3D, y mucho más.
-    '''
+def Home():
+    st.markdown("# HOME :books:")
+    st.sidebar.markdown("# HOME :books:")
+    image = Image.open("Captura de pantalla de 2024-02-13 17-38-24.png")
+    st.image(image, caption='Est')
+    
+    image = Image.open("membrana.png")
+    st.image(image, caption='Sim')
+
+#st.header(':green[Puquna]: Talleres STEAM :pill:' , divider='blue')
+#st.subheader('Jesus Alvarado Huayhuaz')
+
+##############Pagina 2##############
+def page2():
+    st.markdown("# Cursos")
+    st.sidebar.markdown("# Cursos")
+    
+    image = Image.open("membrana.png")
+    st.image(image, caption='Cursos_')
+    
+    total1, total2 = st.columns(2, gap='large')
+    with total1:
+        st.info('Talleres presenciales',icon=":stars:")
+        st.write('''Capacítate en skills que potencian tu CV.
+        Implementa herramientas computacionales, simulaciones, 
+        inteligencia artificial, prototipado con impresión 3D, y mucho más.''')
+    with total2:
+        st.info('Talleres virtuales',icon=":stars:")
+        st.write (pd.DataFrame({'Names': ['Exploración in silico',
+                                          'Revisión de papers con ia', 
+                                          'Simulaciones moleculares 2'], 
+                                'Inicio': ["15 de enero", "24 de febrero", 
+                                           "28 de marzo"]})
 )
 
-st.write (pd.DataFrame({
-    'Names': ['Exploración in silico',
-    'Revisión de papers con ia',
-    'Simulaciones moleculares 2'],
-    'Inicio': ["15 de enero",
-    "24 de febrero",
-    "28 de marzo"]
-})
-)
-
-y = np.random.normal(0,1, size = 100)
-
-#fig, ax = plt.subplots()
-
-#ax.hist(y, bins = 15)
-
-#st.write(fig)
-
-###
+##############Pagina 3##############
+def page3():
+    st.markdown("# Productos STEAM")
+    st.sidebar.markdown("# Productos STEAM")
+        
+    y = np.random.normal(0,1, size = 100)
+    ###
 code = '''
         #include 
         int main() {
@@ -104,3 +119,22 @@ st.header('Welcome to our color picker web app',divider='green' )
 
 color = st.color_picker('Pick A Color', '#00f900')
 st.write('color is:   ', color)
+
+
+#st.title('Cursos de especialización 2024 :books:' )
+
+#st.caption('Por favor _subscríbete_ a mi :red[canal]')
+
+
+
+
+
+#y = np.random.normal(0,1, size = 100)
+
+#fig, ax = plt.subplots()
+
+#ax.hist(y, bins = 15)
+
+#st.write(fig)
+
+
